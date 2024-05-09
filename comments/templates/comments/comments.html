@@ -1,0 +1,21 @@
+<!-- Comments Template -->
+<!-- Displays all comments on a specific post. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments on Post</title>
+</head>
+<body>
+    <h1>Comments</h1>
+    <ul>
+        <!-- Loop through each comment to display who made the comment and what they said -->
+        {% for comment in comments %}
+            <li>
+                <strong>{{ comment.user.first_name }} {{ comment.user.last_name }}</strong> 
+                ({{ comment.timestamp|date:"d M Y H:i" }}): {{ comment.content }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
