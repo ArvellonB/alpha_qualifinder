@@ -1,0 +1,32 @@
+<!-- Messages Template -->
+<!-- This template displays all messages received and sent by a user. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Messages</title>
+</head>
+<body>
+    <h1>Messages</h1>
+    <h2>Received Messages</h2>
+    <ul>
+        <!-- List each message received, showing the sender and the message content -->
+        {% for message in received_messages %}
+            <li>
+                <strong>From {{ message.sender.first_name }} {{ message.sender.last_name }}</strong>: 
+                {{ message.content }} ({{ message.timestamp|date:"d M Y H:i" }})
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Sent Messages</h2>
+    <ul>
+        <!-- List each message sent, showing the receiver and the message content -->
+        {% for message in sent_messages %}
+            <li>
+                <strong>To {{ message.receiver.first_name }} {{ message.receiver.last_name }}</strong>: 
+                {{ message.content }} ({{ message.timestamp|date:"d M Y H:i" }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
