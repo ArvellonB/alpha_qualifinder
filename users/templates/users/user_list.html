@@ -1,0 +1,21 @@
+<!-- User List Template -->
+<!-- This template is used to display a list of all users in the system. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <ul>
+        <!-- Loop through all users passed to the template -->
+        {% for user in users %}
+            <li>
+                <a href="{% url 'user_profile' user.id %}">{{ user.first_name }} {{ user.last_name }}</a>
+                - {{ user.email }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

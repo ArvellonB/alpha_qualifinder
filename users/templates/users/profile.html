@@ -1,0 +1,21 @@
+<!-- User Profile Template -->
+<!-- This template displays detailed information about a specific user. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.first_name }} {{ user.last_name }}'s Profile</title>
+</head>
+<body>
+    <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+    <!-- Display user details -->
+    <p>Email: {{ user.email }}</p>
+    <p>Headline: {{ user.headline }}</p>
+    <p>Summary: {{ user.summary }}</p>
+    <p>Location: {{ user.location }}</p>
+    <!-- Optionally display a profile picture if URL is available -->
+    {% if user.profile_picture_url %}
+        <img src="{{ user.profile_picture_url }}" alt="Profile Picture">
+    {% endif %}
+</body>
+</html>
