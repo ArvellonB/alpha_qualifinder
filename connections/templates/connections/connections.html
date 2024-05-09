@@ -1,0 +1,21 @@
+<!-- Connections Template -->
+<!-- This template displays all connections for a specific user. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Connections</title>
+</head>
+<body>
+    <h1>Connections</h1>
+    <ul>
+        <!-- Display each connection with a link to the connected user's profile -->
+        {% for connection in connections %}
+            <li>
+                {{ connection.user2.first_name }} {{ connection.user2.last_name }} - {{ connection.status }}
+                <a href="{% url 'user_profile' connection.user2.id %}">View Profile</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
