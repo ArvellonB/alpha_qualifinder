@@ -1,0 +1,20 @@
+<!-- Posts Template -->
+<!-- This template lists all posts made by a user, ordered by timestamp. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <ul>
+        <!-- Loop through each post and display its content and timestamp -->
+        {% for post in posts %}
+            <li>
+                <strong>{{ post.timestamp|date:"d M Y H:i" }}</strong>: {{ post.content }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
